@@ -12,13 +12,23 @@ for (let j = 0; j < 9; j++){
     }
 }
 
+const playground = document.getElementById("board")
+playground.addEventListener('click', function(e){
+    var target = e.target;
+    if (target.tagName === 'TD'){
+        var currentText = target.textContent;
+        target.innerHTML = '<input type="text" maxlength = "1" value="' + currentText + '">';
+        var input = target.querySelector('input');
+        input.focus();
 
-$(document).ready(function(){
-    $("td").click(function() {
+        input.addEventListener('input', function() {
+            var newValue = this.value.replace(/[^1-9]/g, ''); // Remove any non-numeric values from 1 to 9
+            this.value = newValue;
+        });
 
-        var column_num = parseInt( $(this).index() ) + 1;
-        var row_num = parseInt( $(this).parent().index() )+1;
-
-        console.log(row_num, ", " ,column_num)
-    });
-});
+        input.addEventListener('blur', function() {
+          var newText = input.value;
+          target.innerHTML = newText;
+        });
+    }
+})
