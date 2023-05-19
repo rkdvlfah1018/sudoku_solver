@@ -47,7 +47,7 @@ var solveButton = document.getElementById("solve");
 
 solveButton.addEventListener('click', function(){
     if(solve(board, 0, 0)){
-        console.log(board)
+        updatePlayingBoard()
     }
     else{
         alert("No solution")
@@ -105,4 +105,13 @@ function isSafe(grid, row, col, num){
  
     return true;
  
+}
+
+function updatePlayingBoard(){
+    var playingBoard = document.getElementById("board")
+    for (let i = 0; i < 9; i++){
+        for (let j = 0; j < 9; j++){
+            playingBoard.rows[i].cells[j].innerHTML = board[i][j]
+        }
+    }
 }
