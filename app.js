@@ -111,7 +111,24 @@ function updatePlayingBoard(){
     var playingBoard = document.getElementById("board")
     for (let i = 0; i < 9; i++){
         for (let j = 0; j < 9; j++){
-            playingBoard.rows[i].cells[j].innerHTML = board[i][j]
+            if(board[i][j] != -1){
+                playingBoard.rows[i].cells[j].innerHTML = board[i][j]
+            }
+            else{
+                playingBoard.rows[i].cells[j].innerHTML = ""
+            }
         }
     }
 }
+
+var resetButton = document.getElementById("reset");
+
+resetButton.addEventListener('click', function(){
+    for (let i = 0; i < 9; i++){
+        for (let j = 0; j < 9; j++){
+            board[i][j] = -1
+        }
+    }
+    updatePlayingBoard();
+
+})

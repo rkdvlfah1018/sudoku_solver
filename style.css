@@ -1,26 +1,70 @@
 td{
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
     border: 1px solid;
     text-align: center;
+    background-color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+td input{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 table{
     border-collapse: collapse;
     border: 1px solid;
-    top:50%;
-    left:50%;
+    margin-left: auto; 
+    margin-right: auto;
+    /* margin-top: 12.5vh; */
 }
 
 body{
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 96%;
     overflow: hidden;
-    background-color: white;
+    background-color: #D7E5F0 ;
+    margin: 0;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input[type="text"] {
     width: 100%; /* Set a fixed width to fill the parent container */
     box-sizing: border-box; /* Include padding in the width */
     text-align: center;
-  }
+}
+
+#description{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 5vh;
+    margin-left: -5vh;
+}
+
+button{
+    position: relative;
+    padding: 1em 2.5em 1em 2.5em;
+    border: none;
+    background: #fff;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+    font-size: 16;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button span {
+    color: #464646;
+}
+
+   
+.full-rounded {
+    border-radius: 2em;
+}
